@@ -238,7 +238,7 @@ class Display:
         
 
 display=Display()
-title="<h1 style='text-align: center;'>Automatic Diet Recommendation</h1>"
+title="<h1 style='text-align: center;'>Noah's Context-Aware Diet Recommendation</h1>"
 st.markdown(title, unsafe_allow_html=True)
 with st.form("recommendation_form"):
     st.write("Modify the values and click the Generate button to use")
