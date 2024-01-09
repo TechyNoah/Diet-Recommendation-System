@@ -241,17 +241,17 @@ display=Display()
 title="<h1 style='text-align: center;'>Noah's Context-Aware Diet Recommendation</h1>"
 st.markdown(title, unsafe_allow_html=True)
 with st.form("recommendation_form"):
-    st.write("Modify the values and click the Generate button to use")
-    age = st.number_input('Age',min_value=2, max_value=120, step=1)
-    height = st.number_input('Height(cm)',min_value=50, max_value=300, step=1)
-    weight = st.number_input('Weight(kg)',min_value=10, max_value=300, step=1)
-    gender = st.radio('Gender',('Male','Female'))
+    st.write("To utilize the Recommender System - modify the default values and click the Generate button at the end of the page.")
+    age = st.number_input('Age of User',min_value=2, max_value=120, step=1)
+    height = st.number_input('Height(cm) of User',min_value=50, max_value=300, step=1)
+    weight = st.number_input('Weight(kg) of User',min_value=10, max_value=300, step=1)
+    gender = st.radio('Gender of User',('Male','Female'))
     activity = st.select_slider('Activity',options=['Little/no exercise', 'Light exercise', 'Moderate exercise (3-5 days/wk)', 'Very active (6-7 days/wk)', 
     'Extra active (very active & physical job)'])
     option = st.selectbox('Choose your weight loss plan:',display.plans)
     st.session_state.weight_loss_option=option
     weight_loss=display.weights[display.plans.index(option)]
-    number_of_meals=st.slider('Meals per day',min_value=3,max_value=5,step=1,value=3)
+    number_of_meals=st.number_input('Meals per day', min_value=1, max_value=5, step=1)
     if number_of_meals==3:
         meals_calories_perc={'breakfast':0.35,'lunch':0.40,'dinner':0.25}
     elif number_of_meals==4:
